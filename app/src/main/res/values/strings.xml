@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">GraphFunctions</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="app_title">Graphic Functions</string>
+    <string name="main_activite_title">DEFINE THE DATA</string>
+    <string name="main_activite_operation">OPERATION</string>
+    <string name="title_activity_graph">GraphActivity</string>
+    <string name="title_activity_main2">Main2Activity</string>
 </resources>

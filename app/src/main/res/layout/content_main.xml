@@ -9,11 +9,32 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="tv.tvquetzachapin.graphfunctions.MainActivity"
+    tools:context=".Activites.MainActivity"
     tools:showIn="@layout/activity_main">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="@string/main_activite_title"
+        android:id="@+id/main_activity_txt_helper"
+        android:textSize="15sp"
+        android:fontFamily="monospace"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textCursorDrawable="@drawable/text_cursor_cyan"
+        android:textSize="14sp"
+        app:met_floatingLabel="highlight"
+        app:met_maxCharacters="20"
+        app:met_primaryColor="?colorAccent"
+        app:met_singleLineEllipsis="true"
+        android:hint="@string/main_activite_operation"
+        android:id="@+id/main_activity_input_operation"
+        android:layout_below="@+id/main_activity_txt_helper"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="51dp" />
 </RelativeLayout>
