@@ -37,4 +37,12 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="51dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/img_main_logo"
+        android:src="@drawable/eqcolor"
+        android:layout_below="@+id/main_activity_txt_helper"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
