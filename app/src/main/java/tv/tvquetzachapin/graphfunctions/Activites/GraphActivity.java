@@ -1,6 +1,7 @@
 package tv.tvquetzachapin.graphfunctions.Activites;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -43,6 +44,23 @@ public class GraphActivity extends AppCompatActivity {
                 new DataPoint(4, -6)
         });
         graph.addSeries(series);
+
+        LineGraphSeries<DataPoint> series2 = new LineGraphSeries<DataPoint>(new DataPoint[] {
+                new DataPoint(0, 1),
+                new DataPoint(1, 4),
+                new DataPoint(2, 3),
+                new DataPoint(3, 7),
+                new DataPoint(4, 4)
+        });
+
+        // set second scale
+        graph.getSecondScale().addSeries(series2);
+        // the y bounds are always manual for second scale
+        graph.getSecondScale().setMinY(0);
+        graph.getSecondScale().setMaxY(100);
+        series2.setColor(Color.RED);
+        graph.getGridLabelRenderer().setVerticalLabelsSecondScaleColor(Color.RED);
+
     }
 
 }
