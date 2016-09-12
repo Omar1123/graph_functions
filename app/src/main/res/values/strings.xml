@@ -7,4 +7,11 @@
     <string name="main_activite_operation">OPERATION</string>
     <string name="title_activity_graph">GraphActivity</string>
     <string name="title_activity_main2">Main2Activity</string>
+    <string name="First_operation_activity_main">First Operation</string>
+    <string name="Second_operation_activity_main">Second Operation</string>
+    <string name="Rule_title">RULE</string>
+    <string name="First_Rule">X >= </string>
+    <string name="First_Rule_hint">Enter a number</string>
+    <string name="Second_Rule">X >= </string>
+    <string name="Second_Rule_hint">Enter a number</string>
 </resources>
