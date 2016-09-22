@@ -57,8 +57,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="20dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignRight="@+id/first_operation_main_activite"
+        android:layout_alignEnd="@+id/first_operation_main_activite" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -67,20 +67,19 @@
         android:id="@+id/txt_rule"
         android:fontFamily="serif-monospace"
         android:textSize="15sp"
-        android:layout_alignBottom="@+id/main_activity_input_operation_first"
-        android:layout_alignLeft="@+id/img_main_logo"
-        android:layout_alignStart="@+id/img_main_logo" />
+        android:layout_below="@+id/main_activity_input_operation_first"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/First_Rule"
         android:id="@+id/textView"
-        android:layout_below="@+id/txt_rule"
-        android:layout_alignLeft="@+id/txt_rule"
-        android:layout_alignStart="@+id/txt_rule"
-        android:layout_alignRight="@+id/img_main_logo"
-        android:layout_alignEnd="@+id/img_main_logo" />
+        android:layout_alignBaseline="@+id/main_activity_first_rule"
+        android:layout_alignBottom="@+id/main_activity_first_rule"
+        android:layout_alignRight="@+id/txt_second_rule"
+        android:layout_alignEnd="@+id/txt_second_rule" />
 
     <com.rengwuxian.materialedittext.MaterialEditText
         android:layout_width="match_parent"
@@ -94,7 +93,7 @@
         app:met_singleLineEllipsis="true"
         android:hint="@string/First_Rule_hint"
         android:id="@+id/main_activity_first_rule"
-        android:layout_alignTop="@+id/txt_rule"
+        android:layout_below="@+id/txt_rule"
         android:layout_toRightOf="@+id/txt_rule"
         android:layout_toEndOf="@+id/txt_rule" />
 
@@ -112,7 +111,41 @@
         android:layout_below="@+id/second_operation_main_activite"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="27dp" />
+        android:layout_marginTop="27dp"
+        android:layout_alignRight="@+id/main_activity_input_operation_first"
+        android:layout_alignEnd="@+id/main_activity_input_operation_first" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textCursorDrawable="@drawable/text_cursor_cyan"
+        android:textSize="14sp"
+        app:met_floatingLabel="highlight"
+        app:met_maxCharacters="20"
+        app:met_primaryColor="?colorAccent"
+        app:met_singleLineEllipsis="true"
+        android:hint="@string/main_activite_1_operation"
+        android:id="@+id/Second_operation_1_input_main"
+        android:layout_alignTop="@+id/Second_operation_input_main"
+        android:layout_toRightOf="@+id/second_operation_main_activite"
+        android:layout_toEndOf="@+id/second_operation_main_activite" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textCursorDrawable="@drawable/text_cursor_cyan"
+        android:textSize="14sp"
+        app:met_floatingLabel="highlight"
+        app:met_maxCharacters="20"
+        app:met_primaryColor="?colorAccent"
+        app:met_singleLineEllipsis="true"
+        android:hint="@string/main_activite_1_operation"
+        android:id="@+id/Second_operation_1eq_input_main"
+        android:layout_above="@+id/txt_rule"
+        android:layout_alignRight="@+id/main_activity_first_rule"
+        android:layout_alignEnd="@+id/main_activity_first_rule"
+        android:layout_toRightOf="@+id/second_operation_main_activite"
+        android:layout_toEndOf="@+id/second_operation_main_activite" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -121,20 +154,19 @@
         android:id="@+id/txt_second_rule"
         android:fontFamily="serif-monospace"
         android:textSize="15sp"
-        android:layout_alignBottom="@+id/Second_operation_input_main"
-        android:layout_alignLeft="@+id/img_main_logo"
-        android:layout_alignStart="@+id/img_main_logo" />
+        android:layout_below="@+id/Second_operation_input_main"
+        android:layout_alignRight="@+id/textSecondRule"
+        android:layout_alignEnd="@+id/textSecondRule" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/First_Rule"
         android:id="@+id/textSecondRule"
-        android:layout_below="@+id/txt_second_rule"
-        android:layout_alignLeft="@+id/txt_rule"
-        android:layout_alignStart="@+id/txt_rule"
-        android:layout_alignRight="@+id/img_main_logo"
-        android:layout_alignEnd="@+id/img_main_logo" />
+        android:layout_alignBaseline="@+id/main_activity_second_rule"
+        android:layout_alignBottom="@+id/main_activity_second_rule"
+        android:layout_toLeftOf="@+id/Second_operation_1_input_main"
+        android:layout_toStartOf="@+id/Second_operation_1_input_main" />
 
     <com.rengwuxian.materialedittext.MaterialEditText
         android:layout_width="match_parent"
@@ -148,7 +180,9 @@
         app:met_singleLineEllipsis="true"
         android:hint="@string/First_Rule_hint"
         android:id="@+id/main_activity_second_rule"
-        android:layout_alignTop="@+id/txt_second_rule"
+        android:layout_below="@+id/Second_operation_1_input_main"
+        android:layout_alignRight="@+id/Second_operation_1_input_main"
+        android:layout_alignEnd="@+id/Second_operation_1_input_main"
         android:layout_toRightOf="@+id/txt_second_rule"
         android:layout_toEndOf="@+id/txt_second_rule" />
 

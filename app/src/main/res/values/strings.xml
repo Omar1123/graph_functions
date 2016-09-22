@@ -5,6 +5,7 @@
     <string name="app_title">Graphic Functions</string>
     <string name="main_activite_title">DEFINE THE DATA</string>
     <string name="main_activite_operation">OPERATION</string>
+    <string name="main_activite_1_operation">SECOND</string>
     <string name="title_activity_graph">GraphActivity</string>
     <string name="title_activity_main2">Main2Activity</string>
     <string name="First_operation_activity_main">First Operation</string>
