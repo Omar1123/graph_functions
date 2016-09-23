@@ -43,11 +43,27 @@ public class MainActivity extends AppCompatActivity {
     private String segundoCampo;
     private String segundoCampo_2;
 
-    //LLnear listas
+    //LLenar lista 1
 
     private String[] arraySpinner;
     private String itemSpiner;
     private Spinner s;
+
+    //Llenar lista 2
+
+    private String[] arraySpinner2;
+    private String itemSpiner2;
+    private Spinner s2;
+
+    //Limite del primer campo
+
+    private MaterialEditText main_activity_first_rule;
+    private String valueOfFirstRule;
+
+    //Limite del segundo campo
+
+    private MaterialEditText main_activity_second_rule;
+    private String valueOfSecondRule;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,16 +85,33 @@ public class MainActivity extends AppCompatActivity {
         inputEq2_first = (MaterialEditText) findViewById(R.id.Second_operation_input_main);
         inputEq2_second = (MaterialEditText) findViewById(R.id.Second_operation_1_input_main);
 
+        //Primer limite
+
+        main_activity_first_rule = (MaterialEditText) findViewById(R.id.main_activity_first_rule);
+
+        //Segundo Limite
+
+        main_activity_second_rule = (MaterialEditText)findViewById(R.id.main_activity_second_rule);
+
         //Llenar listas
 
         this.arraySpinner = new String[] {
-                "X >= ", "X <= ", "=="
+                "X >=", "X <=", "X >", "X <"
         };
 
         s = (Spinner) findViewById(R.id.textView);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, arraySpinner);
         s.setAdapter(adapter);
+
+        this.arraySpinner2 = new String[] {
+                "X >=", "X <=", "X >", "X <"
+        };
+
+        s2 = (Spinner) findViewById(R.id.textSecondRule);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, arraySpinner2);
+        s2.setAdapter(adapter2);
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -122,11 +155,6 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void operateExpression() {
-        Expression e = new Expression("7 <= 9");
-        e.calculate();
-    }
-
     public void operateEQ(String eqn) {
         Argument x = new Argument("x = 5");
         //Expression e = new Expression("3*(x)^2",x);
@@ -138,14 +166,28 @@ public class MainActivity extends AppCompatActivity {
         int limit = Integer.parseInt(secondParameter);
 
         switch (caseLimit) {
-            case "=>":
+            case "X >=":
+
                 break;
-            case ">":
+            case "X <=":
+
                 break;
             case "<=":
+
                 break;
-            case "<":
+            case "X >":
+
+                break;
+            case "X <":
+
+                break;
+            case "==":
+
                 break;
         }
+    }
+
+    private void operateFirstEQ() {
+
     }
 }

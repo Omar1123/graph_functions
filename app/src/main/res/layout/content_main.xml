@@ -156,18 +156,17 @@
         android:fontFamily="serif-monospace"
         android:textSize="15sp"
         android:layout_below="@+id/Second_operation_input_main"
-        android:layout_alignRight="@+id/textSecondRule"
-        android:layout_alignEnd="@+id/textSecondRule" />
+        android:layout_above="@+id/textSecondRule"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <Spinner
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/First_Rule"
         android:id="@+id/textSecondRule"
-        android:layout_alignBaseline="@+id/main_activity_second_rule"
         android:layout_alignBottom="@+id/main_activity_second_rule"
-        android:layout_toLeftOf="@+id/Second_operation_1_input_main"
-        android:layout_toStartOf="@+id/Second_operation_1_input_main" />
+        android:layout_alignRight="@+id/second_operation_main_activite"
+        android:layout_alignEnd="@+id/second_operation_main_activite" />
 
     <com.rengwuxian.materialedittext.MaterialEditText
         android:layout_width="match_parent"
@@ -182,10 +181,8 @@
         android:hint="@string/First_Rule_hint"
         android:id="@+id/main_activity_second_rule"
         android:layout_below="@+id/Second_operation_1_input_main"
-        android:layout_alignRight="@+id/Second_operation_1_input_main"
-        android:layout_alignEnd="@+id/Second_operation_1_input_main"
-        android:layout_toRightOf="@+id/txt_second_rule"
-        android:layout_toEndOf="@+id/txt_second_rule" />
+        android:layout_alignLeft="@+id/Second_operation_1_input_main"
+        android:layout_alignStart="@+id/Second_operation_1_input_main" />
 
     <TextView
         android:layout_width="wrap_content"
