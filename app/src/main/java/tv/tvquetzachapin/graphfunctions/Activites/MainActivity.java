@@ -9,6 +9,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.rengwuxian.materialedittext.MaterialEditText;
@@ -41,11 +43,17 @@ public class MainActivity extends AppCompatActivity {
     private String segundoCampo;
     private String segundoCampo_2;
 
+    //LLnear listas
+
+    private String[] arraySpinner;
+    private String itemSpiner;
+    private Spinner s;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -61,9 +69,22 @@ public class MainActivity extends AppCompatActivity {
         inputEq2_first = (MaterialEditText) findViewById(R.id.Second_operation_input_main);
         inputEq2_second = (MaterialEditText) findViewById(R.id.Second_operation_1_input_main);
 
+        //Llenar listas
+
+        this.arraySpinner = new String[] {
+                "X >= ", "X <= ", "=="
+        };
+
+        s = (Spinner) findViewById(R.id.textView);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, arraySpinner);
+        s.setAdapter(adapter);
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                itemSpiner = s.getSelectedItem().toString();
 
                 primerCampo = inputEq1_first.getText().toString();
                 primerCampo_2 = inputEq1_second.getText().toString();
@@ -72,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
                 operateEQ(resultado);
 
                 Toast.makeText(MainActivity.this, "Valor:" + resultado, Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "TEXT:" + itemSpiner, Toast.LENGTH_SHORT).show();
                 Intent graphSomething = new Intent(MainActivity.this, GraphActivity.class);
                 startActivity(graphSomething);
             }

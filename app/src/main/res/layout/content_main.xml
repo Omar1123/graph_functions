@@ -71,15 +71,16 @@
         android:layout_alignLeft="@+id/textView"
         android:layout_alignStart="@+id/textView" />
 
-    <TextView
+    <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/First_Rule"
         android:id="@+id/textView"
-        android:layout_alignBaseline="@+id/main_activity_first_rule"
-        android:layout_alignBottom="@+id/main_activity_first_rule"
-        android:layout_alignRight="@+id/txt_second_rule"
-        android:layout_alignEnd="@+id/txt_second_rule" />
+        android:layout_toStartOf="@+id/main_activity_txt_helper"
+        android:layout_below="@+id/txt_rule"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/second_operation_main_activite"
+        android:layout_alignEnd="@+id/second_operation_main_activite" />
 
     <com.rengwuxian.materialedittext.MaterialEditText
         android:layout_width="match_parent"
@@ -93,9 +94,9 @@
         app:met_singleLineEllipsis="true"
         android:hint="@string/First_Rule_hint"
         android:id="@+id/main_activity_first_rule"
-        android:layout_below="@+id/txt_rule"
-        android:layout_toRightOf="@+id/txt_rule"
-        android:layout_toEndOf="@+id/txt_rule" />
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/Second_operation_1_input_main"
+        android:layout_alignStart="@+id/Second_operation_1_input_main" />
 
     <com.rengwuxian.materialedittext.MaterialEditText
         android:layout_width="match_parent"
@@ -193,9 +194,10 @@
         android:textSize="18sp"
         android:fontFamily="serif-monospace"
         android:id="@+id/second_operation_main_activite"
-        android:layout_below="@+id/main_activity_first_rule"
+        android:layout_below="@+id/textView"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="26dp" />
 </RelativeLayout>
 
 
