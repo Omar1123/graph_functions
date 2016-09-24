@@ -85,7 +85,6 @@
     <com.rengwuxian.materialedittext.MaterialEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="number"
         android:textCursorDrawable="@drawable/text_cursor_cyan"
         android:textSize="14sp"
         app:met_floatingLabel="highlight"
@@ -171,7 +170,6 @@
     <com.rengwuxian.materialedittext.MaterialEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="number"
         android:textCursorDrawable="@drawable/text_cursor_cyan"
         android:textSize="14sp"
         app:met_floatingLabel="highlight"

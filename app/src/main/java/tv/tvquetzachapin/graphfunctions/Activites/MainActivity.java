@@ -117,16 +117,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                itemSpiner = s.getSelectedItem().toString();
+                itemSpiner = s.getSelectedItem().toString(); //Obtiene el parametro para el limite
 
-                primerCampo = inputEq1_first.getText().toString();
-                primerCampo_2 = inputEq1_second.getText().toString();
-                resultado = primerCampo + primerCampo_2;
+                primerCampo = inputEq1_first.getText().toString(); //Obtiene el valor del primer campo(x)
+                primerCampo_2 = inputEq1_second.getText().toString(); //Obtiene el valor del segundo campo(y)
 
-                operateEQ(resultado);
+                resultado = primerCampo + primerCampo_2; //Une la ecuacion para poder resolverla
 
-                Toast.makeText(MainActivity.this, "Valor:" + resultado, Toast.LENGTH_SHORT).show();
-                Toast.makeText(MainActivity.this, "TEXT:" + itemSpiner, Toast.LENGTH_SHORT).show();
+                operateEQ(resultado); //Despeja la ecuacion y retorna los valores a operar
+                valueOfSecondRule = main_activity_first_rule.getText().toString(); //Obtiene el parametro del limite
+
+                getLimit(valueOfSecondRule,itemSpiner); //Obtiene el limite, si es vacio o lleno
+
+                //Toast.makeText(MainActivity.this, "Valor:" + resultado, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MainActivity.this, "TEXT:" + itemSpiner, Toast.LENGTH_SHORT).show();
                 Intent graphSomething = new Intent(MainActivity.this, GraphActivity.class);
                 startActivity(graphSomething);
             }
@@ -156,38 +160,40 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void operateEQ(String eqn) {
-        Argument x = new Argument("x = 5");
+
+        String listNumbers;
+
+        for(int i=0; i<=5; i++) {
+            Argument x = new Argument("x = " + i);
+            Expression e = new Expression(eqn,x);
+            Toast.makeText(MainActivity.this, "OP: " + e.calculate(), Toast.LENGTH_SHORT).show();
+        }
+
         //Expression e = new Expression("3*(x)^2",x);
-        Expression e = new Expression(eqn,x);
-        Toast.makeText(MainActivity.this, "OP: " + e.calculate(), Toast.LENGTH_SHORT).show();
+        //Expression e = new Expression(eqn,x);
+
     }
 
     public void getLimit(String secondParameter, String caseLimit) {
+
         int limit = Integer.parseInt(secondParameter);
 
         switch (caseLimit) {
             case "X >=":
-
+                Toast.makeText(MainActivity.this, "Si Incluye:" + resultado, Toast.LENGTH_SHORT).show();
                 break;
             case "X <=":
-
-                break;
-            case "<=":
-
+                Toast.makeText(MainActivity.this, "No Incluye:" + resultado, Toast.LENGTH_SHORT).show();
                 break;
             case "X >":
-
+                Toast.makeText(MainActivity.this, "Si Incluye:" + resultado, Toast.LENGTH_SHORT).show();
                 break;
             case "X <":
-
+                Toast.makeText(MainActivity.this, "No Incluye:" + resultado, Toast.LENGTH_SHORT).show();
                 break;
             case "==":
-
+                Toast.makeText(MainActivity.this, "NPI" + resultado, Toast.LENGTH_SHORT).show();
                 break;
         }
-    }
-
-    private void operateFirstEQ() {
-
     }
 }
