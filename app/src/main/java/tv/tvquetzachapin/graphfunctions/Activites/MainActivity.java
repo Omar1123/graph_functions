@@ -18,6 +18,9 @@ import com.rengwuxian.materialedittext.MaterialEditText;
 import org.mariuszgromada.math.mxparser.Argument;
 import org.mariuszgromada.math.mxparser.Expression;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import tv.tvquetzachapin.graphfunctions.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -42,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
     private String segundoCampo;
     private String segundoCampo_2;
+    private String resultado2;
 
     //LLenar lista 1
 
@@ -117,22 +121,26 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                //Primer resultado
+
                 itemSpiner = s.getSelectedItem().toString(); //Obtiene el parametro para el limite
 
                 primerCampo = inputEq1_first.getText().toString(); //Obtiene el valor del primer campo(x)
                 primerCampo_2 = inputEq1_second.getText().toString(); //Obtiene el valor del segundo campo(y)
 
+                segundoCampo = inputEq2_first.getText().toString();
+                segundoCampo_2 = inputEq2_second.getText().toString();
+
+
                 resultado = primerCampo + primerCampo_2; //Une la ecuacion para poder resolverla
+                resultado2 = segundoCampo + segundoCampo_2; //Une la segunda ecuacion para resolverla
 
-                operateEQ(resultado); //Despeja la ecuacion y retorna los valores a operar
-                valueOfSecondRule = main_activity_first_rule.getText().toString(); //Obtiene el parametro del limite
+                operateEQ(resultado,resultado2); //Despeja la ecuacion y retorna los valores a operar
+                //Segundo Resultado
 
-                getLimit(valueOfSecondRule,itemSpiner); //Obtiene el limite, si es vacio o lleno
+                //valueOfSecondRule = main_activity_first_rule.getText().toString(); //Obtiene el parametro del limite
 
-                //Toast.makeText(MainActivity.this, "Valor:" + resultado, Toast.LENGTH_SHORT).show();
-                //Toast.makeText(MainActivity.this, "TEXT:" + itemSpiner, Toast.LENGTH_SHORT).show();
-                Intent graphSomething = new Intent(MainActivity.this, GraphActivity.class);
-                startActivity(graphSomething);
+                //getLimit(valueOfSecondRule,itemSpiner); //Obtiene el limite, si es vacio o lleno
             }
         });
     }
@@ -159,19 +167,30 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void operateEQ(String eqn) {
+    public void operateEQ(String eqn1, String eqn2) {
 
+        Intent graphSomething = new Intent(MainActivity.this, GraphActivity.class);
         String listNumbers;
 
         for(int i=0; i<=5; i++) {
             Argument x = new Argument("x = " + i);
-            Expression e = new Expression(eqn,x);
-            Toast.makeText(MainActivity.this, "OP: " + e.calculate(), Toast.LENGTH_SHORT).show();
+            Expression e = new Expression(eqn1,x);
+            Double saveValuePositionY = e.calculate();
+            int positionY = saveValuePositionY.intValue();
+
+            graphSomething.putExtra("xValue" + i, positionY);
         }
 
-        //Expression e = new Expression("3*(x)^2",x);
-        //Expression e = new Expression(eqn,x);
+        for(int i=0; i<=5; i++) {
+            Argument x1 = new Argument("x = " + i);
+            Expression e = new Expression(eqn2,x1);
+            Double saveValuePositionY1 = e.calculate();
+            int positionY1 = saveValuePositionY1.intValue();
 
+            graphSomething.putExtra("xValue2" + i, positionY1);
+        }
+
+        startActivity(graphSomething);
     }
 
     public void getLimit(String secondParameter, String caseLimit) {
