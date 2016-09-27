@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ap="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="tv.tvquetzachapin.graphfunctions.Activites.Graph2Activity">
+
+
+    <com.androidplot.xy.XYPlot
+        style="@style/APDefacto.Dark"
+        android:id="@+id/plot"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        ap:title="A Simple XY Plot"
+        ap:rangeTitle="range"
+        ap:domainTitle="domain"
+        ap:lineLabels="left|bottom|top|right"
+        ap:gridInsetRight="30dp"
+        ap:gridInsetTop="30dp"
+        ap:gridInsetBottom="20dp"
+        ap:lineLabelInsetRight="25dp"
+        ap:lineLabelInsetTop="25dp"
+        ap:lineLabelRotationBottom="-45"
+        ap:lineLabelRotationTop="0"
+        ap:lineLabelAlignTop="center"
+        ap:domainOriginLineThickness="4dp"
+        ap:rangeOriginLineThickness="4dp"/>
+</RelativeLayout>

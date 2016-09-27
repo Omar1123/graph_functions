@@ -28,12 +28,14 @@ public class MainActivity extends AppCompatActivity {
     //Primeros campos de la primera ecuación
 
     private MaterialEditText inputEq1_first;
-    private MaterialEditText inputEq1_second;
 
     //Primeros campos de la segunda ecuación
 
     private MaterialEditText inputEq2_first;
-    private MaterialEditText inputEq2_second;
+
+    //Primeros campos para la tercera ecuacion
+
+    private MaterialEditText inputEq3_first;
 
     //Strings primer campo
 
@@ -47,6 +49,10 @@ public class MainActivity extends AppCompatActivity {
     private String segundoCampo_2;
     private String resultado2;
 
+    //Strings para el tercer campo
+
+    private String tercerCampo3;
+
     //LLenar lista 1
 
     private String[] arraySpinner;
@@ -58,6 +64,12 @@ public class MainActivity extends AppCompatActivity {
     private String[] arraySpinner2;
     private String itemSpiner2;
     private Spinner s2;
+
+    //Llenar lista 3
+
+    private String[] arraySpinner3;
+    private String itemSpiner3;
+    private Spinner s3;
 
     //Limite del primer campo
 
@@ -82,12 +94,14 @@ public class MainActivity extends AppCompatActivity {
         //Primera Operacion
 
         inputEq1_first = (MaterialEditText) findViewById(R.id.main_activity_input_operation_first);
-        inputEq1_second = (MaterialEditText) findViewById(R.id.Second_operation_1eq_input_main);
 
         //Segunda Operacion
 
         inputEq2_first = (MaterialEditText) findViewById(R.id.Second_operation_input_main);
-        inputEq2_second = (MaterialEditText) findViewById(R.id.Second_operation_1_input_main);
+
+        //Tercera Operacion
+
+        inputEq3_first = (MaterialEditText) findViewById(R.id.third_eqn);
 
         //Primer limite
 
@@ -117,6 +131,15 @@ public class MainActivity extends AppCompatActivity {
                 android.R.layout.simple_spinner_item, arraySpinner2);
         s2.setAdapter(adapter2);
 
+        this.arraySpinner3 = new String[] {
+                "X >=", "X <=", "X >", "X <"
+        };
+
+        s3 = (Spinner) findViewById(R.id.textThirdRule);
+        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, arraySpinner3);
+        s3.setAdapter(adapter2);
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -126,16 +149,23 @@ public class MainActivity extends AppCompatActivity {
                 itemSpiner = s.getSelectedItem().toString(); //Obtiene el parametro para el limite
 
                 primerCampo = inputEq1_first.getText().toString(); //Obtiene el valor del primer campo(x)
-                primerCampo_2 = inputEq1_second.getText().toString(); //Obtiene el valor del segundo campo(y)
 
-                segundoCampo = inputEq2_first.getText().toString();
-                segundoCampo_2 = inputEq2_second.getText().toString();
+                segundoCampo = inputEq2_first.getText().toString(); //Obtiene la segunda ecuacion
 
+                tercerCampo3 = inputEq3_first.getText().toString(); //Obtiene la tercera ecuacion
 
-                resultado = primerCampo + primerCampo_2; //Une la ecuacion para poder resolverla
-                resultado2 = segundoCampo + segundoCampo_2; //Une la segunda ecuacion para resolverla
+                //Manda las ecuaciones a la siguiente actividad
 
-                operateEQ(resultado,resultado2); //Despeja la ecuacion y retorna los valores a operar
+                Toast.makeText(MainActivity.this, "Ecuacion 1" + primerCampo, Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Ecuacion 2" + segundoCampo, Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Ecuacion 3" + tercerCampo3, Toast.LENGTH_LONG).show();
+
+                Intent graphSomething = new Intent(MainActivity.this, Graph2Activity.class);
+                graphSomething.putExtra("eqn1", primerCampo);
+                graphSomething.putExtra("eqn2", segundoCampo);
+                graphSomething.putExtra("eqn3", tercerCampo3);
+                startActivity(graphSomething);
+                //operateEQ(resultado,resultado2); //Despeja la ecuacion y retorna los valores a operar
                 //Segundo Resultado
 
                 //valueOfSecondRule = main_activity_first_rule.getText().toString(); //Obtiene el parametro del limite

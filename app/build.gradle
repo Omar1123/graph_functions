@@ -17,6 +17,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    buildToolsVersion '24.0.2'
 }
 
 dependencies {
@@ -27,5 +28,5 @@ dependencies {
     compile 'com.rengwuxian.materialedittext:library:2.1.4'
     compile 'com.jjoe64:graphview:4.1.1'
     compile files('libs/mxparser_jdk1.7.jar')
-    compile 'com.google.code.gson:gson:2.3.1'
+    compile "com.androidplot:androidplot-core:1.2.1"
 }

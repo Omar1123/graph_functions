@@ -15,4 +15,7 @@
     <string name="First_Rule_hint">Enter a number</string>
     <string name="Second_Rule">X >= </string>
     <string name="Second_Rule_hint">Enter a number</string>
+    <string name="third_equation">Third Equation</string>
+    <string name="third_Rule">X >= </string>
+    <string name="third_Rule_hint">Enter a number</string>
 </resources>
