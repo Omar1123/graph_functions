@@ -8,6 +8,7 @@ import tv.tvquetzachapin.graphfunctions.R;
 import android.app.*;
 import android.graphics.*;
 import android.os.*;
+import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
 import com.androidplot.util.*;
@@ -67,7 +68,6 @@ public class Graph2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_graph2);
-
 
         // initialize our XYPlot reference:
         plot = (XYPlot) findViewById(R.id.plot);
@@ -134,7 +134,7 @@ public class Graph2Activity extends AppCompatActivity {
             x +=step;
         }
 
-        return new SimpleXYSeries(xVals, yVals, "f(x) = (x^2) + 13");
+        return new SimpleXYSeries(xVals, yVals,"");
     }
 
     protected double operateEquation1(String eqn1, double x) {
@@ -163,7 +163,7 @@ public class Graph2Activity extends AppCompatActivity {
             x +=step;
         }
 
-        return new SimpleXYSeries(xVals, yVals, "f(x) = (x^2) + -13");
+        return new SimpleXYSeries(xVals, yVals, "");
     }
 
     protected double operateEquation2(String eqn2, double x) {
@@ -191,7 +191,7 @@ public class Graph2Activity extends AppCompatActivity {
             x +=step;
         }
 
-        return new SimpleXYSeries(xVals, yVals, "f(x) = (x^2) + -13");
+        return new SimpleXYSeries(xVals, yVals, "");
     }
 
     protected double operateEquation3(String eqn3, double x) {

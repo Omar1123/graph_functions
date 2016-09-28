@@ -99,10 +99,12 @@ public class MainActivity extends AppCompatActivity {
 
         inputEq2_first = (MaterialEditText) findViewById(R.id.Second_operation_input_main);
 
+
         //Tercera Operacion
 
         inputEq3_first = (MaterialEditText) findViewById(R.id.third_eqn);
 
+        /*
         //Primer limite
 
         main_activity_first_rule = (MaterialEditText) findViewById(R.id.main_activity_first_rule);
@@ -111,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
 
         main_activity_second_rule = (MaterialEditText)findViewById(R.id.main_activity_second_rule);
 
-        //Llenar listas
+        //Llenar listas*/
 
         this.arraySpinner = new String[] {
                 "X >=", "X <=", "X >", "X <"
@@ -155,10 +157,6 @@ public class MainActivity extends AppCompatActivity {
                 tercerCampo3 = inputEq3_first.getText().toString(); //Obtiene la tercera ecuacion
 
                 //Manda las ecuaciones a la siguiente actividad
-
-                Toast.makeText(MainActivity.this, "Ecuacion 1" + primerCampo, Toast.LENGTH_LONG).show();
-                Toast.makeText(MainActivity.this, "Ecuacion 2" + segundoCampo, Toast.LENGTH_LONG).show();
-                Toast.makeText(MainActivity.this, "Ecuacion 3" + tercerCampo3, Toast.LENGTH_LONG).show();
 
                 Intent graphSomething = new Intent(MainActivity.this, Graph2Activity.class);
                 graphSomething.putExtra("eqn1", primerCampo);

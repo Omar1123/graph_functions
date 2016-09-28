@@ -39,18 +39,8 @@
                 android:layout_below="@+id/main_activity_txt_helper"
                 android:layout_centerHorizontal="true" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/First_operation_activity_main"
-                android:textSize="18sp"
-                android:fontFamily="serif-monospace"
-                android:id="@+id/first_operation_main_activite"
-                android:layout_below="@+id/img_main_logo"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
-
             <com.rengwuxian.materialedittext.MaterialEditText
+                android:paddingBottom="20sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textCursorDrawable="@drawable/text_cursor_cyan"
@@ -61,29 +51,27 @@
                 app:met_singleLineEllipsis="true"
                 android:hint="@string/main_activite_operation"
                 android:id="@+id/main_activity_input_operation_first"
-                android:layout_below="@+id/first_operation_main_activite"
+                android:layout_below="@+id/img_main_logo"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/Rule_title"
-                android:id="@+id/txt_rule"
-                android:fontFamily="serif-monospace"
-                android:textSize="15sp"
-                android:layout_alignBottom="@+id/main_activity_input_operation_first"
-                android:layout_centerHorizontal="true" />
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="16dp"
+                android:layout_toLeftOf="@+id/img_main_logo"
+                android:layout_toStartOf="@+id/img_main_logo" />
 
             <Spinner
+                android:paddingBottom="20sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView"
-                android:layout_below="@+id/txt_rule"
-                android:layout_alignRight="@+id/first_operation_main_activite"
-                android:layout_alignEnd="@+id/first_operation_main_activite" />
+                android:layout_alignBaseline="@+id/main_activity_input_operation_first"
+                android:layout_alignBottom="@+id/main_activity_input_operation_first"
+                android:layout_alignLeft="@+id/img_main_logo"
+                android:layout_alignStart="@+id/img_main_logo"
+                android:layout_alignRight="@+id/main_activity_txt_helper"
+                android:layout_alignEnd="@+id/main_activity_txt_helper" />
 
             <com.rengwuxian.materialedittext.MaterialEditText
+                android:paddingBottom="20sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textCursorDrawable="@drawable/text_cursor_cyan"
@@ -92,13 +80,14 @@
                 app:met_maxCharacters="20"
                 app:met_primaryColor="?colorAccent"
                 app:met_singleLineEllipsis="true"
-                android:hint="@string/First_Rule_hint"
+                android:hint="@string/Limit"
                 android:id="@+id/main_activity_first_rule"
-                android:layout_below="@+id/txt_rule"
+                android:textAlignment="textEnd"
+                android:layout_alignTop="@+id/main_activity_input_operation_first"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
-                android:layout_toRightOf="@+id/second_operation_main_activite"
-                android:layout_toEndOf="@+id/second_operation_main_activite" />
+                android:layout_toRightOf="@+id/textView"
+                android:layout_toEndOf="@+id/textView" />
 
             <com.rengwuxian.materialedittext.MaterialEditText
                 android:layout_width="match_parent"
@@ -111,31 +100,23 @@
                 app:met_singleLineEllipsis="true"
                 android:hint="@string/main_activite_operation"
                 android:id="@+id/Second_operation_input_main"
-                android:layout_below="@+id/second_operation_main_activite"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/Rule_title"
-                android:id="@+id/txt_second_rule"
-                android:fontFamily="serif-monospace"
-                android:textSize="15sp"
-                android:layout_below="@+id/Second_operation_input_main"
-                android:layout_above="@+id/textSecondRule"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
-
-            <Spinner
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textSecondRule"
-                android:layout_alignTop="@+id/main_activity_second_rule"
+                android:layout_below="@+id/textView"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_toLeftOf="@+id/txt_rule"
-                android:layout_toStartOf="@+id/txt_rule" />
+                android:layout_marginTop="16dp"
+                android:layout_toLeftOf="@+id/textView"
+                android:layout_toStartOf="@+id/textView" />
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textSecondRule"
+                android:layout_alignBaseline="@+id/Second_operation_input_main"
+                android:layout_alignBottom="@+id/Second_operation_input_main"
+                android:layout_alignLeft="@+id/textView"
+                android:layout_alignStart="@+id/textView"
+                android:layout_alignRight="@+id/textView"
+                android:layout_alignEnd="@+id/textView" />
 
             <com.rengwuxian.materialedittext.MaterialEditText
                 android:layout_width="match_parent"
@@ -146,33 +127,12 @@
                 app:met_maxCharacters="20"
                 app:met_primaryColor="?colorAccent"
                 app:met_singleLineEllipsis="true"
-                android:hint="@string/First_Rule_hint"
+                android:hint="@string/Limit"
+                android:textAlignment="textEnd"
                 android:id="@+id/main_activity_second_rule"
-                android:layout_toRightOf="@+id/textView"
-                android:layout_toEndOf="@+id/textView"
-                android:layout_below="@+id/Second_operation_input_main" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/Second_operation_activity_main"
-                android:textSize="18sp"
-                android:fontFamily="serif-monospace"
-                android:id="@+id/second_operation_main_activite"
-                android:layout_below="@+id/textView"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/third_equation"
-                android:textSize="18sp"
-                android:fontFamily="serif-monospace"
-                android:id="@+id/txtThirdEcuation"
-                android:layout_below="@+id/main_activity_second_rule"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignTop="@+id/Second_operation_input_main"
+                android:layout_toRightOf="@+id/textSecondRule"
+                android:layout_toEndOf="@+id/textSecondRule" />
 
             <com.rengwuxian.materialedittext.MaterialEditText
                 android:layout_width="match_parent"
@@ -185,32 +145,23 @@
                 app:met_singleLineEllipsis="true"
                 android:hint="@string/main_activite_operation"
                 android:id="@+id/third_eqn"
-                android:layout_below="@+id/txtThirdEcuation"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
-
-            <Spinner
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textThirdRule"
-                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/textSecondRule"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_marginBottom="34dp"
-                android:layout_alignRight="@+id/textSecondRule"
-                android:layout_alignEnd="@+id/textSecondRule" />
+                android:layout_marginTop="21dp"
+                android:layout_toLeftOf="@+id/textSecondRule"
+                android:layout_toStartOf="@+id/textSecondRule" />
 
-            <TextView
+            <Spinner
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/Rule_title"
-                android:id="@+id/txt_thirt_rule_rule"
-                android:fontFamily="serif-monospace"
-                android:textSize="15sp"
-                android:layout_below="@+id/Second_operation_input_main"
-                android:layout_above="@+id/textSecondRule"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:id="@+id/textThirdRule"
+                android:layout_alignBaseline="@+id/third_eqn"
+                android:layout_alignBottom="@+id/third_eqn"
+                android:layout_alignLeft="@+id/textSecondRule"
+                android:layout_alignStart="@+id/textSecondRule"
+                android:layout_alignRight="@+id/textSecondRule"
+                android:layout_alignEnd="@+id/textSecondRule" />
 
             <com.rengwuxian.materialedittext.MaterialEditText
                 android:layout_width="match_parent"
@@ -221,13 +172,12 @@
                 app:met_maxCharacters="20"
                 app:met_primaryColor="?colorAccent"
                 app:met_singleLineEllipsis="true"
-                android:hint="@string/third_Rule_hint"
-                android:id="@+id/third_eqn_rule"
-                android:layout_alignTop="@+id/textThirdRule"
-                android:layout_alignRight="@+id/third_eqn"
-                android:layout_alignEnd="@+id/third_eqn"
-                android:layout_alignLeft="@+id/main_activity_second_rule"
-                android:layout_alignStart="@+id/main_activity_second_rule" />
+                android:hint="@string/Limit"
+                android:textAlignment="textEnd"
+                android:id="@+id/main_activity_third_rule"
+                android:layout_alignTop="@+id/third_eqn"
+                android:layout_toRightOf="@+id/textThirdRule"
+                android:layout_toEndOf="@+id/textThirdRule" />
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>
