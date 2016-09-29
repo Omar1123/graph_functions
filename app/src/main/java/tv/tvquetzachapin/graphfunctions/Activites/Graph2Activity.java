@@ -25,6 +25,7 @@ public class Graph2Activity extends AppCompatActivity {
 
     private XYPlot plot;
     private String eqn1, eqn2, eqn3 = null;
+    private String eq1L, eq2L, eq3L;
 
     /**
      * Custom line label renderer that highlights origin labels
@@ -84,6 +85,14 @@ public class Graph2Activity extends AppCompatActivity {
         series1Format.configure(getApplicationContext(),
                 R.xml.line_point_formatter);
 
+        LineAndPointFormatter series1Format1 = new LineAndPointFormatter();
+        series1Format1.configure(getApplicationContext(),
+                R.xml.line_point_formatter1);
+
+        LineAndPointFormatter series1Format2 = new LineAndPointFormatter();
+        series1Format2.configure(getApplicationContext(),
+                R.xml.line_point_formatter2);
+
         // use our custom renderer to make origin labels red
         plot.getGraph().setLineLabelRenderer(XYGraphWidget.Edge.BOTTOM, new MyLineLabelRenderer());
         plot.getGraph().setLineLabelRenderer(XYGraphWidget.Edge.LEFT, new MyLineLabelRenderer());
@@ -112,11 +121,14 @@ public class Graph2Activity extends AppCompatActivity {
             eqn1 = extras.getString("eqn1");
             eqn2 = extras.getString("eqn2");
             eqn3 = extras.getString("eqn3");
+            eq1L = extras.getString("limite1");
+            eq2L = extras.getString("limite2");
+            eq3L = extras.getString("limite3");
         }
 
         plot.addSeries(generateEquation1(-5, 3, 10, eqn1), series1Format);
-        plot.addSeries(generateEquation2(-5, 3, 10, eqn2), series1Format);
-        plot.addSeries(generateEquation3(-5, 3, 10, eqn3), series1Format);
+        plot.addSeries(generateEquation2(-5, 3, 10, eqn2), series1Format1);
+        plot.addSeries(generateEquation3(-5, 3, 10, eqn3), series1Format2);
     }
 
     //1 Grafica
@@ -134,7 +146,7 @@ public class Graph2Activity extends AppCompatActivity {
             x +=step;
         }
 
-        return new SimpleXYSeries(xVals, yVals,"");
+        return new SimpleXYSeries(xVals, yVals,eq1L);
     }
 
     protected double operateEquation1(String eqn1, double x) {
@@ -163,7 +175,7 @@ public class Graph2Activity extends AppCompatActivity {
             x +=step;
         }
 
-        return new SimpleXYSeries(xVals, yVals, "");
+        return new SimpleXYSeries(xVals, yVals, eq2L);
     }
 
     protected double operateEquation2(String eqn2, double x) {
@@ -191,7 +203,7 @@ public class Graph2Activity extends AppCompatActivity {
             x +=step;
         }
 
-        return new SimpleXYSeries(xVals, yVals, "");
+        return new SimpleXYSeries(xVals, yVals, eq3L);
     }
 
     protected double operateEquation3(String eqn3, double x) {

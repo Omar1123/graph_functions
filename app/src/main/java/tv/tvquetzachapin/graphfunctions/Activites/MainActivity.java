@@ -81,6 +81,11 @@ public class MainActivity extends AppCompatActivity {
     private MaterialEditText main_activity_second_rule;
     private String valueOfSecondRule;
 
+    //Limite del tercer campo
+
+    private MaterialEditText main_activity_third_rule;
+    private String valueOfThirdRule;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -104,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
 
         inputEq3_first = (MaterialEditText) findViewById(R.id.third_eqn);
 
-        /*
+
         //Primer limite
 
         main_activity_first_rule = (MaterialEditText) findViewById(R.id.main_activity_first_rule);
@@ -113,10 +118,14 @@ public class MainActivity extends AppCompatActivity {
 
         main_activity_second_rule = (MaterialEditText)findViewById(R.id.main_activity_second_rule);
 
-        //Llenar listas*/
+        //Tercer Limite
+
+        main_activity_third_rule = (MaterialEditText)findViewById(R.id.main_activity_third_rule);
+
+        //Llenar listas
 
         this.arraySpinner = new String[] {
-                "X >=", "X <=", "X >", "X <"
+                "X >", "X <"
         };
 
         s = (Spinner) findViewById(R.id.textView);
@@ -125,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
         s.setAdapter(adapter);
 
         this.arraySpinner2 = new String[] {
-                "X >=", "X <=", "X >", "X <"
+                "X >", "X <"
         };
 
         s2 = (Spinner) findViewById(R.id.textSecondRule);
@@ -134,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
         s2.setAdapter(adapter2);
 
         this.arraySpinner3 = new String[] {
-                "X >=", "X <=", "X >", "X <"
+                "X >", "X <"
         };
 
         s3 = (Spinner) findViewById(R.id.textThirdRule);
@@ -146,9 +155,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                //Primer resultado
-
-                itemSpiner = s.getSelectedItem().toString(); //Obtiene el parametro para el limite
+                //Obtiene las ecuaciones a operar
 
                 primerCampo = inputEq1_first.getText().toString(); //Obtiene el valor del primer campo(x)
 
@@ -156,13 +163,36 @@ public class MainActivity extends AppCompatActivity {
 
                 tercerCampo3 = inputEq3_first.getText().toString(); //Obtiene la tercera ecuacion
 
+                //Obtiene los limites de las operaciones
+
+                itemSpiner = s.getSelectedItem().toString(); //Obtiene el parametro para el limite
+                itemSpiner2 = s2.getSelectedItem().toString(); //Obtiene el parametro para el limite
+                itemSpiner3 = s3.getSelectedItem().toString(); //Obtiene el parametro para el limite
+
+                valueOfFirstRule = main_activity_first_rule.getText().toString();
+                valueOfSecondRule = main_activity_second_rule.getText().toString();
+                valueOfThirdRule = main_activity_third_rule.getText().toString();
+
                 //Manda las ecuaciones a la siguiente actividad
+
+                final String eq1Limit = getLimit(valueOfFirstRule,itemSpiner);
+                final String eq2Limit = getLimit(valueOfSecondRule,itemSpiner2);
+                final String eq3Limit = getLimit(valueOfThirdRule,itemSpiner3);
+
+                Toast.makeText(MainActivity.this, "1: " + eq1Limit, Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "2: " + eq2Limit, Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "3: " + eq3Limit, Toast.LENGTH_LONG).show();
+
 
                 Intent graphSomething = new Intent(MainActivity.this, Graph2Activity.class);
                 graphSomething.putExtra("eqn1", primerCampo);
                 graphSomething.putExtra("eqn2", segundoCampo);
                 graphSomething.putExtra("eqn3", tercerCampo3);
+                graphSomething.putExtra("limite1", eq1Limit);
+                graphSomething.putExtra("limite2", eq2Limit);
+                graphSomething.putExtra("limite3", eq3Limit);
                 startActivity(graphSomething);
+
                 //operateEQ(resultado,resultado2); //Despeja la ecuacion y retorna los valores a operar
                 //Segundo Resultado
 
@@ -221,26 +251,20 @@ public class MainActivity extends AppCompatActivity {
         startActivity(graphSomething);
     }
 
-    public void getLimit(String secondParameter, String caseLimit) {
+    public String getLimit(String limitP, String caseLimit) {
 
-        int limit = Integer.parseInt(secondParameter);
+        String message = "";
+        int limit = Integer.parseInt(limitP);
 
         switch (caseLimit) {
-            case "X >=":
-                Toast.makeText(MainActivity.this, "Si Incluye:" + resultado, Toast.LENGTH_SHORT).show();
-                break;
-            case "X <=":
-                Toast.makeText(MainActivity.this, "No Incluye:" + resultado, Toast.LENGTH_SHORT).show();
-                break;
             case "X >":
-                Toast.makeText(MainActivity.this, "Si Incluye:" + resultado, Toast.LENGTH_SHORT).show();
-                break;
+                message = "Lleno";
+                return message;
             case "X <":
-                Toast.makeText(MainActivity.this, "No Incluye:" + resultado, Toast.LENGTH_SHORT).show();
-                break;
-            case "==":
-                Toast.makeText(MainActivity.this, "NPI" + resultado, Toast.LENGTH_SHORT).show();
-                break;
+                message = "Vacio";
+                return message;
         }
+
+        return message;
     }
 }

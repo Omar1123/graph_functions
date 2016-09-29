@@ -19,4 +19,7 @@
     <string name="third_Rule">X >= </string>
     <string name="third_Rule_hint">Enter a number</string>
     <string name="Limit">Limit</string>
+    <string name="equation_1">Equation 1</string>
+    <string name="equation_2">Equation 2</string>
+    <string name="equation_3">Equation 3</string>
 </resources>
