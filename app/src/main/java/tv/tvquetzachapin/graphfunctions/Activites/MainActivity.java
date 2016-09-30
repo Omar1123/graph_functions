@@ -39,19 +39,19 @@ public class MainActivity extends AppCompatActivity {
 
     //Strings primer campo
 
-    private String primerCampo;
+    private String primerCampo = null;
     private String primerCampo_2;
     private String resultado;
 
     //Strings segundo campo
 
-    private String segundoCampo;
+    private String segundoCampo = null;
     private String segundoCampo_2;
     private String resultado2;
 
     //Strings para el tercer campo
 
-    private String tercerCampo3;
+    private String tercerCampo3 = null;
 
     //LLenar lista 1
 
@@ -157,11 +157,27 @@ public class MainActivity extends AppCompatActivity {
 
                 //Obtiene las ecuaciones a operar
 
-                primerCampo = inputEq1_first.getText().toString(); //Obtiene el valor del primer campo(x)
+                try {
 
-                segundoCampo = inputEq2_first.getText().toString(); //Obtiene la segunda ecuacion
+                    primerCampo = inputEq1_first.getText().toString(); //Obtiene el valor del primer campo(x)
+                    segundoCampo = inputEq2_first.getText().toString(); //Obtiene la segunda ecuacion
+                    tercerCampo3 = inputEq3_first.getText().toString(); //Obtiene la tercera ecuacion
 
-                tercerCampo3 = inputEq3_first.getText().toString(); //Obtiene la tercera ecuacion
+                    if (primerCampo.matches("")) {
+                        primerCampo = "0";
+                    }
+
+                    if (segundoCampo.matches("")) {
+                        segundoCampo = "0";
+                    }
+
+                    if (tercerCampo3.matches("")) {
+                        tercerCampo3 = "0";
+                    }
+
+                } catch (Exception ex) {
+                    Toast.makeText(MainActivity.this, "" + ex.toString(), Toast.LENGTH_SHORT).show();
+                }
 
                 //Obtiene los limites de las operaciones
 
@@ -169,20 +185,32 @@ public class MainActivity extends AppCompatActivity {
                 itemSpiner2 = s2.getSelectedItem().toString(); //Obtiene el parametro para el limite
                 itemSpiner3 = s3.getSelectedItem().toString(); //Obtiene el parametro para el limite
 
-                valueOfFirstRule = main_activity_first_rule.getText().toString();
-                valueOfSecondRule = main_activity_second_rule.getText().toString();
-                valueOfThirdRule = main_activity_third_rule.getText().toString();
+                try {
+                    valueOfFirstRule = main_activity_first_rule.getText().toString();
+                    valueOfSecondRule = main_activity_second_rule.getText().toString();
+                    valueOfThirdRule = main_activity_third_rule.getText().toString();
+
+                    if (valueOfFirstRule.matches("")) {
+                        valueOfFirstRule = "0";
+                    }
+
+                    if (valueOfSecondRule.matches("")) {
+                        valueOfSecondRule = "0";
+                    }
+
+                    if (valueOfThirdRule.matches("")) {
+                        valueOfThirdRule = "0";
+                    }
+
+                } catch (Exception ex) {
+                    Toast.makeText(MainActivity.this, "" + ex.toString(), Toast.LENGTH_SHORT).show();
+                }
 
                 //Manda las ecuaciones a la siguiente actividad
 
                 final String eq1Limit = getLimit(valueOfFirstRule,itemSpiner);
                 final String eq2Limit = getLimit(valueOfSecondRule,itemSpiner2);
                 final String eq3Limit = getLimit(valueOfThirdRule,itemSpiner3);
-
-                Toast.makeText(MainActivity.this, "1: " + eq1Limit, Toast.LENGTH_LONG).show();
-                Toast.makeText(MainActivity.this, "2: " + eq2Limit, Toast.LENGTH_LONG).show();
-                Toast.makeText(MainActivity.this, "3: " + eq3Limit, Toast.LENGTH_LONG).show();
-
 
                 Intent graphSomething = new Intent(MainActivity.this, Graph2Activity.class);
                 graphSomething.putExtra("eqn1", primerCampo);

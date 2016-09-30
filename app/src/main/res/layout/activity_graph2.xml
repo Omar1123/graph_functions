@@ -12,13 +12,13 @@
     tools:context="tv.tvquetzachapin.graphfunctions.Activites.Graph2Activity">
 
     <com.androidplot.xy.XYPlot
-        style="@style/APDefacto.Dark"
+        style="@style/APDefacto.Light"
         android:id="@+id/plot"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         ap:title="Graphics parts"
         ap:rangeTitle="range"
-        ap:domainTitle="domain"
+        ap:domainTitle="-∞,∞"
         ap:lineLabels="left|bottom|top|right"
         ap:gridInsetRight="30dp"
         ap:gridInsetTop="30dp"
