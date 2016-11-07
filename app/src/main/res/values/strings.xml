@@ -22,4 +22,10 @@
     <string name="equation_1">Equation 1</string>
     <string name="equation_2">Equation 2</string>
     <string name="equation_3">Equation 3</string>
+    <string name="title_activity_navigation">NavigationActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="card_title">Opciones de operaciones</string>
+    <string name="card_title_card_eqn">Graficar Ecuaciones</string>
 </resources>

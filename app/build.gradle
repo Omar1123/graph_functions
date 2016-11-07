@@ -29,4 +29,5 @@ dependencies {
     compile 'com.jjoe64:graphview:4.1.1'
     compile files('libs/mxparser_jdk1.7.jar')
     compile "com.androidplot:androidplot-core:1.2.1"
+    compile 'com.android.support:cardview-v7:23.0.+'
 }
