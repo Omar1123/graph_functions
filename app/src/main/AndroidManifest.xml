@@ -16,22 +16,30 @@
             android:name=".Activites.SplashActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity
-            android:name=".Activites.GraphActivity"
-            android:label="@string/title_activity_graph"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Activites.Graph2Activity"></activity>
-        <activity
-            android:name=".Activites.NavigationActivity"
-            android:label="@string/title_activity_navigation"
-            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Activites.GraphActivity"
+            android:label="@string/title_activity_graph"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Activites.Graph2Activity" />
+        <activity
+            android:name=".Activites.NavigationActivity"
+            android:label="@string/title_activity_navigation"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Activites.TrigonometricActivity" />
+        <activity
+            android:name=".Activites.HipActivity"
+            android:label="@string/title_activity_hip"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".Activites.CatActivity"
+            android:label="@string/title_activity_cat"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

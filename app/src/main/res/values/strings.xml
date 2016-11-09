@@ -22,10 +22,25 @@
     <string name="equation_1">Equation 1</string>
     <string name="equation_2">Equation 2</string>
     <string name="equation_3">Equation 3</string>
-    <string name="title_activity_navigation">NavigationActivity</string>
+    <string name="title_activity_navigation">Menu</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="card_title">Opciones de operaciones</string>
     <string name="card_title_card_eqn">Graficar Ecuaciones</string>
+
+    <string name="card_title_card_tri">Trigonometria</string>
+    <string name="card_title_card_tri_title">Elija que desea operar</string>
+    <string name="card_title_card_tri_triang">Encontrar la hipotenusa de un triaungulo</string>
+    <string name="card_title_card_tri_triang_cat">Encontrar un cateto de un triaungulo</string>
+    <string name="card_title_card_tri_btn">Encontrar</string>
+
+    <string name="card_title_card_hip_title">Encontrar Hipotenusa</string>
+    <string name="card_title_card_hip_cat1">Cateto</string>
+    <string name="card_title_card_hip_hip">"?"</string>
+    <string name="title_activity_hip">Hipotenusa</string>
+    <string name="title_activity_cat">Cateto</string>
+
+    <string name="card_title_card_cat_title">Encontrar Cateto</string>
+    <string name="card_title_card_cat_hip">Hipotenusa</string>
 </resources>

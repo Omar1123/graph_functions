@@ -30,10 +30,10 @@ public class SplashActivity extends AppCompatActivity {
                 Boolean isRemembered = preferenciasUsuario.getBoolean("Recordarme", false);
 
                 if (isRemembered) {
-                    intent = new Intent(SplashActivity.this, MainActivity.class);
+                    intent = new Intent(SplashActivity.this, NavigationActivity.class);
                 }
                 else {
-                    intent = new Intent(SplashActivity.this, MainActivity.class);
+                    intent = new Intent(SplashActivity.this, NavigationActivity.class);
                 }
                 SplashActivity.this.startActivity(intent);
                 SplashActivity.this.finish();

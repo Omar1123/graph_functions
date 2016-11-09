@@ -1,5 +1,6 @@
 package tv.tvquetzachapin.graphfunctions.Activites;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -83,9 +84,12 @@ public class NavigationActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_eqn) {
+            Intent graph = new Intent(this, MainActivity.class);
+            startActivity(graph);
             // Handle the camera action
         } else if (id == R.id.nav_pitagoras) {
-
+            Intent trig = new Intent(this, TrigonometricActivity.class);
+            startActivity(trig);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
