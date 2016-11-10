@@ -178,6 +178,7 @@
                 android:layout_alignTop="@+id/third_eqn"
                 android:layout_toRightOf="@+id/textThirdRule"
                 android:layout_toEndOf="@+id/textThirdRule" />
+
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>

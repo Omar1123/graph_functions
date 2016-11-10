@@ -26,6 +26,9 @@ public class CatActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         cat3 = (EditText) findViewById(R.id.ct4);
         cat4 = (EditText) findViewById(R.id.ct5);
         txtR1 = (TextView) findViewById(R.id.txtCat);

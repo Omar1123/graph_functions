@@ -43,4 +43,10 @@
 
     <string name="card_title_card_cat_title">Encontrar Cateto</string>
     <string name="card_title_card_cat_hip">Hipotenusa</string>
+    <string name="card_title_card_trig">Senos, Cosenos, Tangente</string>
+    <string name="title_activity_sen_cos_tan">SenCosTanActivity</string>
+    <string name="title_activity_ley_sen_cos_tan">Ley de Senos, Cosenos y Tangente</string>
+    <string name="angle">Angulo</string>
+    <string name="cat">Lado</string>
+    <string name="resp">Respuesta</string>
 </resources>

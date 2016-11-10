@@ -10,7 +10,7 @@ import tv.tvquetzachapin.graphfunctions.R;
 
 public class TrigonometricActivity extends AppCompatActivity {
 
-    Button btnHip, btnCat;
+    Button btnHip, btnCat, btnTrig;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +19,7 @@ public class TrigonometricActivity extends AppCompatActivity {
 
         btnHip = (Button)findViewById(R.id.btnHipotenusa);
         btnCat = (Button)findViewById(R.id.btnCat);
+        btnTrig = (Button)findViewById(R.id.btnTrig);
 
         btnHip.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,6 +34,14 @@ public class TrigonometricActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intCat = new Intent(TrigonometricActivity.this, CatActivity.class);
                 startActivity(intCat);
+            }
+        });
+
+        btnTrig.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intAng = new Intent(TrigonometricActivity.this, SenCosTanActivity.class);
+                startActivity(intAng);
             }
         });
     }

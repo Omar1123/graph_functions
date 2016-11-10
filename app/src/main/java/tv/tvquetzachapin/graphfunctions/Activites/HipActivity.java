@@ -27,6 +27,9 @@ public class HipActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         cat1 = (EditText) findViewById(R.id.ct1);
         cat2 = (EditText) findViewById(R.id.ct2);
         txtR = (TextView) findViewById(R.id.txtHip);
