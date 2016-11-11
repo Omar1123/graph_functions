@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="tv.tvquetzachapin.graphfunctions.Activites.CatActivity">
+    tools:context="tv.tvquetzachapin.graphfunctions.Activites.Trigonometry2Activity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -21,7 +21,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_cat" />
+    <include layout="@layout/content_trigonometry2" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

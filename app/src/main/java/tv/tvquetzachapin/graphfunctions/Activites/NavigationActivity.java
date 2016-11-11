@@ -88,7 +88,7 @@ public class NavigationActivity extends AppCompatActivity
             startActivity(graph);
             // Handle the camera action
         } else if (id == R.id.nav_pitagoras) {
-            Intent trig = new Intent(this, TrigonometricActivity.class);
+            Intent trig = new Intent(this, Trigonometry2Activity.class);
             startActivity(trig);
         }
 

@@ -26,8 +26,7 @@
             android:name=".Activites.GraphActivity"
             android:label="@string/title_activity_graph"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Activites.Graph2Activity" />
+        <activity android:name=".Activites.Graph2Activity" />
         <activity
             android:name=".Activites.NavigationActivity"
             android:label="@string/title_activity_navigation"
@@ -41,21 +40,29 @@
             android:theme="@style/AppTheme.NoActionBar" />
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Activites.TrigonometricActivity" />
+                android:value=".Activites.Trigonometry2Activity" />
         <activity
             android:name=".Activites.CatActivity"
             android:label="@string/title_activity_cat"
             android:theme="@style/AppTheme.NoActionBar" />
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Activites.TrigonometricActivity" />
+                android:value=".Activites.Trigonometry2Activity" />
         <activity
             android:name=".Activites.SenCosTanActivity"
             android:label="@string/title_activity_sen_cos_tan"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Activites.TrigonometricActivity" />
+                android:value=".Activites.Trigonometry2Activity" />
+        </activity>
+        <activity
+            android:name=".Activites.Trigonometry2Activity"
+            android:label="@string/title_activity_trigonometry2"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activites.NavigationActivity" />
         </activity>
     </application>
 

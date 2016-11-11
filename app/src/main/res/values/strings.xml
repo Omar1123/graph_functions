@@ -49,4 +49,5 @@
     <string name="angle">Angulo</string>
     <string name="cat">Lado</string>
     <string name="resp">Respuesta</string>
+    <string name="title_activity_trigonometry2">Opciones</string>
 </resources>
